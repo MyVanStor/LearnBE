@@ -10,6 +10,7 @@ public class TestDB {
 	public static void main(String[] args) throws SQLException {
 		Connection con = DatabaseUtils.getConnection();
 		
+		con.setAutoCommit(false);
 		// Đưa createStatement vào đây sẽ tự động .close() statement object
 		try(Statement st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE)) {
 			ResultSet rs = st.executeQuery("SELECT * FROM Course");
@@ -34,6 +35,10 @@ public class TestDB {
 			pstmt.setString(4, "Cauclus V");
 			pstmt.setInt(5, 2);
 			pstmt.executeUpdate();
+
+			con.commit();
+			pstmt.close();
+			con.setAutoCommit(true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
