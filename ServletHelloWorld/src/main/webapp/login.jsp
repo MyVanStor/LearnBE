@@ -9,9 +9,9 @@
 <body>
 	<form action="HomeServlet" method="post">
 		<label>Username</label> <br>
-		<input username="username" type="text"> <br>
-		<label>Password </label> <br>
-		<input password="password" type="text"> <br> <br>
+		<input name="username" type="text"> <br>
+		<label>Password </label>  <br>
+		<input name="password" type="password"> <br> <br>
 		<button type="submit">Submit</button> 
 	</form>
 </body>

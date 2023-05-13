@@ -6,7 +6,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class HomeServlet
@@ -35,18 +34,18 @@ public class HomeServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
+		String usernameTest = request.getParameter("username");
+		String passwordTest = request.getParameter("password");
+		System.out.println(usernameTest + passwordTest);
 		
-//		request.setAttribute("msg", message);
-//		request.getRequestDispatcher("homeServlet.jsp").forward(request, response);
-		
-//		System.out.println(message);
-		
-		HttpSession session = request.getSession();
-		session.setAttribute("msg", username);
-		response.sendRedirect("homeServlet.jsp");
-		
+		String username = getServletContext().getInitParameter("username");
+		String password = getServletContext().getInitParameter("password");
+				
+		if(usernameTest.equals(username) && passwordTest.equals(password)) {
+			response.sendRedirect("susscess.jsp");
+		} else {
+			response.sendRedirect("failure.jsp");
+		}
 	}
 
 }
