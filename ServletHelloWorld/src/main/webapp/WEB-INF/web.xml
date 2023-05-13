@@ -11,10 +11,10 @@
   </welcome-file-list>
   <context-param>
   	<param-name>username</param-name>
-  	<param-value>username</param-value>
+  	<param-value>usernametest</param-value>
   </context-param>
   <context-param>
   	<param-name>password</param-name>
-  	<param-value>password</param-value>
+  	<param-value>passwordtest</param-value>
   </context-param>
 </web-app>
