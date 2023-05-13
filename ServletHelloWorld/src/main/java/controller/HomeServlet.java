@@ -35,7 +35,8 @@ public class HomeServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String message = request.getParameter("message");
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
 		
 //		request.setAttribute("msg", message);
 //		request.getRequestDispatcher("homeServlet.jsp").forward(request, response);
@@ -43,7 +44,7 @@ public class HomeServlet extends HttpServlet {
 //		System.out.println(message);
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("msg", message);
+		session.setAttribute("msg", username);
 		response.sendRedirect("homeServlet.jsp");
 		
 	}
