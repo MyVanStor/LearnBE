@@ -36,12 +36,11 @@ public class HomeServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String usernameTest = request.getParameter("username");
 		String passwordTest = request.getParameter("password");
-		System.out.println(usernameTest + passwordTest);
 		
 		String username = getServletContext().getInitParameter("username");
 		String password = getServletContext().getInitParameter("password");
 				
-		if(usernameTest.equals(username) && passwordTest.equals(password)) {
+		if(usernameTest != null && passwordTest != null && usernameTest.equals(username) && passwordTest.equals(password)) {
 			response.sendRedirect("susscess.jsp");
 		} else {
 			response.sendRedirect("failure.jsp");
