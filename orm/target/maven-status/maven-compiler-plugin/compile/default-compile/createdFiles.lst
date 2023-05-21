@@ -1,0 +1,3 @@
+orm\training\utils\HibernateUtils.class
+orm\training\dao\JobDaoImpl.class
+orm\training\entity\Jobs.class
