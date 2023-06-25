@@ -1,0 +1,6 @@
+javatraining\dao\EmployeeDaoImpl.class
+javatraining\main\MainTest.class
+training\utils\HibernateUtils.class
+javatraining\entities\Jobs.class
+javatraining\dao\JobDaoImpl.class
+javatraining\entities\Employees.class

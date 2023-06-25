@@ -12,7 +12,7 @@ import javatraining.entities.Jobs;
 public class MainTest {
 	public static void main(String[] args) throws Exception {
 //		SessionFactory session = HibernateUtils.getSessionFactory();
-		
+
 		EmployeeDaoImpl daoImpl = new EmployeeDaoImpl();
 		JobDaoImpl jobImpl = new JobDaoImpl();
 //		Jobs job = new Jobs("J002", "Java fresher IT", 10, 20, null);
@@ -21,7 +21,7 @@ public class MainTest {
 //		
 //		e.setJob(job);
 //		daoImpl.save(e);
-		
+
 		Employees e = new Employees(0, "Nguyen", "Van", "Vannd215512", "038282", LocalDate.now(), 15, 30, null);
 		Employees e1 = new Employees(0, "Nguyen", "Van", "Van1nd215512", "03828", LocalDate.now(), 15, 30, null);
 		Employees e2 = new Employees(0, "Nguyen", "Van", "Van2nd215512", "0382", LocalDate.now(), 15, 30, null);
@@ -35,5 +35,21 @@ public class MainTest {
 		Jobs job = new Jobs("J005", "Java freshe", 10, 20, null);
 		job.setEmployees(set);
 		jobImpl.save(job);
+
+//		List<Object[]> list = jobImpl.testAll();
+//		
+//		List<Object[]> objects = jobImpl.findHQLJob();
+//		
+//		for (Object[] objects2 : objects) {
+//			System.out.println((Jobs) objects2[0]);
+//			
+//			System.out.println((Employees) objects2[1]);
+//		}
+		
+//		List<Jobs> list2 = jobImpl.searching(e);
+//		
+//		for (Jobs jobs : list2) {
+//			System.out.println(jobs.toString());
+//		}
 	}
 }

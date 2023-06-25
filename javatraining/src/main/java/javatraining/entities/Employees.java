@@ -37,6 +37,7 @@ public class Employees {
 	@Column(name = "hire_date")
 	private LocalDate hireDate;
 
+	@Column(name = "salary")
 	private double salary;
 
 	@Column(name = "commission_pct")
@@ -135,5 +136,13 @@ public class Employees {
 	public void setCommissionPct(double commissionPct) {
 		this.commissionPct = commissionPct;
 	}
+
+	@Override
+	public String toString() {
+		return "Employees [employeeId=" + employeeId + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", email=" + email + ", phoneNumber=" + phoneNumber + ", hireDate=" + hireDate + ", salary=" + salary
+				+ ", commissionPct=" + commissionPct + ", job=" + job + "]";
+	}
+	
 	
 }

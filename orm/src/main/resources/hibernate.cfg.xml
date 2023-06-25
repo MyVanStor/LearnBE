@@ -7,7 +7,7 @@
 <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
 <property name="connection.url">jdbc:sqlserver://localhost:1433;databaseName=TrainingDB</property>
 <property name="connection.username">sa</property>
-<property name="connection.password">nguyetminh110903</property>
+<property name="connection.password"></property>
 
 <!-- JDBC connection pool (use the built-in) -->
 <property name="connection.pool_size">1</property>

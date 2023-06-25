@@ -5,6 +5,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.Index;
 import javax.persistence.OneToMany;
@@ -70,7 +71,7 @@ public class Jobs {
 		this.maxSalary = maxSalary;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "job")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "job", fetch = FetchType.LAZY)
 	private Set<Employees> employees;
 
 	public Set<Employees> getEmployees() {
@@ -90,4 +91,11 @@ public class Jobs {
 		this.employees = employees;
 	}
 
+	@Override
+	public String toString() {
+		return "Jobs [jobId=" + jobId + ", jobTitle=" + jobTitle + ", minSalary=" + minSalary + ", maxSalary="
+				+ maxSalary +"]";
+	}
+
+	
 }
